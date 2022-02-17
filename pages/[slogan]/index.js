@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const index = ({ data }) => {
-  const title = data.attributes.title;
-  const Arr = data.attributes.project_photos.data;
+  const { title, slogan } = data[0].attributes;
+  const Arr = data[0].attributes.project_photos.data;
 
   const filteredArr = Arr.map((ele) => {
     const { width, height, hash } = ele.attributes;
@@ -75,23 +75,23 @@ export const getStaticPaths = async () => {
   const res = await fetch("https://strapi-eurommr.herokuapp.com/api/services");
   const resObj = await res.json();
 
-  const ids = resObj.data.map((bg) => {
+  const slogans = resObj.data.map((bg) => {
     return {
-      params: { id: bg.id.toString() },
+      params: { slogan: bg.attributes.slogan },
     };
   });
 
   return {
-    paths: ids,
+    paths: slogans,
     fallback: true,
   };
 };
 
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
+  const slogan = context.params.slogan;
 
   const res = await fetch(
-    `https://strapi-eurommr.herokuapp.com/api/services/${id}?fields=title&populate=project_photos`
+    `https://strapi-eurommr.herokuapp.com/api/services?filters[slogan][$eq]=${slogan}&fields=title,slogan&populate=project_photos`
   );
   const resObj = await res.json();
 

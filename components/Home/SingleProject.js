@@ -2,7 +2,7 @@ import Image from "next/image";
 import buildUrl from "cloudinary-build-url";
 import Link from "next/link";
 
-const SingleProject = ({ id, title, location, url, hash }) => {
+const SingleProject = ({ slogan, title, location, url, hash }) => {
   const blurUrl = buildUrl(hash, {
     cloud: {
       cloudName: "ddwguc7vu",
@@ -13,7 +13,7 @@ const SingleProject = ({ id, title, location, url, hash }) => {
   });
 
   return (
-    <Link href={`/${id}`} passHref>
+    <Link href={`/${slogan}`} passHref>
       <div className="mx-auto">
         <Image
           alt="project img"

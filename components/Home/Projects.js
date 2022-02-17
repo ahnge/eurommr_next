@@ -13,12 +13,12 @@ const Projects = ({ data }) => {
       <div className="grid grid-cols-2 grid-flow-row px-8 gap-4 mt-8 sm:gap-6 xl:grid-cols-4 lg:mt-10 xl:mt-14 xlr:mt-16">
         {data.map((obj) => {
           const { id } = obj;
-          const { title, location } = obj.attributes;
+          const { title, location, slogan } = obj.attributes;
           const { url, hash } = obj.attributes.service_media.data.attributes;
           return (
             <SingleProject
               key={id}
-              id={id}
+              slogan={slogan}
               title={title}
               location={location}
               url={url}
