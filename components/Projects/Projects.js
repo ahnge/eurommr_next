@@ -1,4 +1,5 @@
 import Image from "next/image";
+import buildUrl from "cloudinary-build-url";
 
 const Projects = ({ data }) => {
   const { title } = data.data[0].attributes;
