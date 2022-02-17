@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Projects = ({ data }) => {
   const { title } = data.data[0].attributes;
   const Arr = data.data[0].attributes.project_photos.data;
