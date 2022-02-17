@@ -88,10 +88,10 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const slogan = context.params.slogan;
+  const slo = context.params.slogan;
 
   const res = await fetch(
-    `https://strapi-eurommr.herokuapp.com/api/services?filters[slogan][$eq]=${slogan}&fields=title,slogan&populate=project_photos`
+    `https://strapi-eurommr.herokuapp.com/api/services?filters[slogan][$eq]=${slo}&fields=title,slogan&populate=project_photos`
   );
   const resObj = await res.json();
 
