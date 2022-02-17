@@ -4,7 +4,7 @@ import buildUrl from "cloudinary-build-url";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProjectPage = ({ data = null }) => {
+const ProjectPage = ({ data }) => {
   const { title, slogan } = data.data[0].attributes;
   const Arr = data.data[0].attributes.project_photos.data;
 
