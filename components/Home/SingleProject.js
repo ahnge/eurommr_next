@@ -13,9 +13,10 @@ const SingleProject = ({ id, title, location, url, hash }) => {
   });
 
   return (
-    <Link href={`/${id}`}>
+    <Link href={`/${id}`} passHref>
       <div className="mx-auto">
         <Image
+          alt="project img"
           width={346}
           height={288}
           src={url}

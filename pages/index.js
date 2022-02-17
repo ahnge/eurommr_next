@@ -5,14 +5,9 @@ import About from "../components/Home/About";
 import Services from "../components/Home/Services";
 import DL from "../components/Home/DL";
 import Projects from "../components/Home/Projects";
-import { useEffect } from "react";
 import Contact from "../components/Home/Contact";
 
 export default function Home({ data }) {
-  useEffect(() => {
-    console.log(data);
-  }, []);
-
   return (
     <div className=" bg-white dark:bg-black min-h-screen w-full lg:pl-64 xlr:pl-[400px]">
       <Nav />

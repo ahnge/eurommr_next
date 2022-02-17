@@ -53,6 +53,7 @@ const index = ({ data }) => {
               className="rounded-lg shadow-lg h-52 overflow-hidden hover:scale-105 transition relative"
             >
               <Image
+                alt="Imgs"
                 src={src}
                 layout="fill"
                 placeholder="blur"

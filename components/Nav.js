@@ -1,6 +1,7 @@
 import { Facebook, LeftArrow, Logo, LogoDark, RightArrow } from "./icons/icons";
 import { useState } from "react";
 import { useGlobalcontext } from "./context";
+import Link from "next/link";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,15 +73,14 @@ const Nav = () => {
       </button>
 
       <div className="absolute bottom-10 py-5 flex flex-col items-center space-y-2">
-        <a
-          href="/"
-          className="flex space-x-1 items-center text-text_wm dark:text-text_dm  hover:text-yellow-600  font-normal transition dark:hover:text-yellow-400"
-        >
-          <Facebook />
-          <p className=" text-lg font-normal tracking-normal xlr:text-2xl">
-            Find us on facebook.
-          </p>
-        </a>
+        <Link href="/">
+          <a className="flex space-x-1 items-center text-text_wm dark:text-text_dm  hover:text-yellow-600  font-normal transition dark:hover:text-yellow-400">
+            <Facebook />
+            <p className=" text-lg font-normal tracking-normal xlr:text-2xl">
+              Find us on facebook.
+            </p>
+          </a>
+        </Link>
         <p className=" text-xs font-normal xlr:text-sm text-text_wm dark:text-text_dm ">
           2022&copy; All Rights Reserved.
         </p>
