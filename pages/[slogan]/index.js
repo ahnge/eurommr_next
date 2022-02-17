@@ -3,10 +3,15 @@ import Nav from "../../components/Nav";
 import buildUrl from "cloudinary-build-url";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const index = ({ data }) => {
-  const { title, slogan } = data[0].attributes;
-  const Arr = data[0].attributes.project_photos.data;
+  useEffect(() => {
+    console.log(data);
+  }, []);
+
+  const { title, slogan } = data.data[0].attributes;
+  const Arr = data.data[0].attributes.project_photos.data;
 
   const filteredArr = Arr.map((ele) => {
     const { width, height, hash } = ele.attributes;
@@ -97,7 +102,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      data: resObj.data,
+      data: resObj,
     },
   };
 };
