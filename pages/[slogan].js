@@ -1,15 +1,10 @@
-import DL from "../../components/Home/DL";
-import Nav from "../../components/Nav";
+import DL from "../components/Home/DL";
+import Nav from "../components/Nav";
 import buildUrl from "cloudinary-build-url";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const index = ({ data }) => {
-  useEffect(() => {
-    console.log(data);
-  }, []);
-
   const { title, slogan } = data.data[0].attributes;
   const Arr = data.data[0].attributes.project_photos.data;
 
