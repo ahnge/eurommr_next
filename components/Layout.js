@@ -1,5 +1,22 @@
+import { useGlobalcontext } from "./context";
+import { useEffect, useRef } from "react";
+import Footer from "./Footer";
+
 const Layout = ({ children }) => {
-  return <div className="font-mont">{children}</div>;
+  const { setParentTag } = useGlobalcontext();
+  const parentTag = useRef();
+
+  useEffect(() => {
+    setParentTag(parentTag.current);
+    console.log("parentTag setted");
+  }, []);
+
+  return (
+    <div className="font-mont" ref={parentTag}>
+      {children}
+      <Footer />
+    </div>
+  );
 };
 
 export default Layout;
