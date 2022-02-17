@@ -15,7 +15,7 @@ const Hero = () => {
         src={src}
         alt="background pic"
         layout="fill"
-        priority
+        priority={true}
         objectFit="cover"
         objectPosition="center top"
       ></Image>
