@@ -34,7 +34,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: slogans,
-    fallback: true,
+    fallback: false,
   };
 };
 
