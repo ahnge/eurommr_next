@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import DL from "../../components/Home/DL";
 import Nav from "../../components/Nav";
 import buildUrl from "cloudinary-build-url";
@@ -6,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const index = ({ data }) => {
-  const router = useRouter();
-
   const title = data.attributes.title;
   const Arr = data.attributes.project_photos.data;
 
@@ -34,10 +31,6 @@ const index = ({ data }) => {
 
     return { src, blurSrc, width: obj.width, height: obj.height };
   });
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className=" bg-lb2 dark:bg-db2 min-h-screen w-full lg:pl-64 xlr:pl-[400px] py-10 transition">

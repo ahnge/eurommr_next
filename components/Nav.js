@@ -19,49 +19,54 @@ const Nav = () => {
 
       <ul className=" mt-20 w-full">
         <li className=" w-full">
-          <a
-            href="/#welcome"
-            className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </a>
+          <Link href="/#welcome">
+            <a
+              className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </a>
+          </Link>
         </li>
         <li className=" w-full">
-          <a
-            href="/#welcome"
-            className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
-            onClick={() => setIsOpen(false)}
-          >
-            About us
-          </a>
+          <Link href="/#welcome">
+            <a
+              className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
+              onClick={() => setIsOpen(false)}
+            >
+              About us
+            </a>
+          </Link>
         </li>
         <li className=" w-full">
-          <a
-            href="/#welcome"
-            className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
-            onClick={() => setIsOpen(false)}
-          >
-            Services
-          </a>
+          <Link href="/#welcome">
+            <a
+              className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
+              onClick={() => setIsOpen(false)}
+            >
+              Services
+            </a>
+          </Link>
         </li>
         <li className=" w-full">
-          <a
-            href="/#welcome"
-            className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </a>
+          <Link href="/#welcome">
+            <a
+              className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
+              onClick={() => setIsOpen(false)}
+            >
+              Projects
+            </a>
+          </Link>
         </li>
         <li className=" w-full">
-          <a
-            href="/#welcome"
-            className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact us
-          </a>
+          <Link href="/#welcome">
+            <a
+              className=" font-light text-lg leading-[26px] py-3 block w-full border-l-8 border-transparent transition-all hover:border-yellow-300 pl-14 hover:bg-lb2 lgr:text-xl xlr:text-3xl xlr:py-5 xlr:tracking-wide text-text_wm dark:text-text_dm dark:hover:bg-[#1C1C1C]"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact us
+            </a>
+          </Link>
         </li>
       </ul>
 
