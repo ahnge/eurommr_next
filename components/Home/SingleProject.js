@@ -13,7 +13,7 @@ const SingleProject = ({ slogan, title, location, url, hash }) => {
   });
 
   return (
-    <Link href={`/${slogan}`} passHref>
+    <Link href={`/projects/${slogan}`} passHref>
       <div className="mx-auto">
         <Image
           alt="project img"

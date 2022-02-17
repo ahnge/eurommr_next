@@ -1,5 +1,5 @@
-import DL from "../components/Home/DL";
-import Nav from "../components/Nav";
+import DL from "../../components/Home/DL";
+import Nav from "../../components/Nav";
 import buildUrl from "cloudinary-build-url";
 import Image from "next/image";
 import Link from "next/link";
