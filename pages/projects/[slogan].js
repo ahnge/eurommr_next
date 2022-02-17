@@ -69,7 +69,7 @@ const ProjectPage = ({ data = null }) => {
   );
 };
 
-export default index;
+export default ProjectPage;
 
 export const getStaticPaths = async () => {
   const res = await fetch("https://strapi-eurommr.herokuapp.com/api/services");
