@@ -16,7 +16,8 @@ module.exports = {
         lb2: "#F7F7F7",
         db1: "#1C1C1C",
         db2: "#161616",
-        hover_l: "#F0F7FE",
+        hover: "#707172",
+        active: "#1B1E1F",
       },
       screens: {
         lgr: "1430px",

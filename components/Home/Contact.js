@@ -1,10 +1,8 @@
 import { Location, Mail, User } from "../icons/icons";
-import { useState, useEffect } from "react";
-import { useGlobalcontext } from "../context";
+import { useState } from "react";
 
 const Contact = () => {
   const [emailHasSent, setEmailHasSent] = useState(false);
-  const { contactRef } = useGlobalcontext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <div className=" py-[70px] bg-lb1 dark:bg-db1 transition" ref={contactRef}>
+    <div className=" py-[70px] bg-lb1 dark:bg-db1 transition" id="contact">
       <div className=" pl-7 py-2 md:pl-12 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400">
         <h3 className=" font-semibold text-2xl sm:text-[1.75rem] lgr:text-[2.44rem] text-text_wm dark:text-text_dm">
           Contact US

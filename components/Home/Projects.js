@@ -1,13 +1,10 @@
-import { useGlobalcontext } from "../context";
 import SingleProject from "./SingleProject";
 
 const Projects = ({ data }) => {
-  const { projectRef } = useGlobalcontext();
-
   return (
     <div
       className=" bg-lb2 dark:bg-db2 py-[70px] lgr:pt-24 transition"
-      ref={projectRef}
+      id="projects"
     >
       <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
         Our{" "}

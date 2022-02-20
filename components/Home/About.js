@@ -4,8 +4,6 @@ import ProfileImg from "./ProfileImg";
 import Welcome from "./Welcome";
 
 const About = () => {
-  const { aboutRef } = useGlobalcontext();
-
   const myArray = [
     {
       url: "temp_propfile_swnwih",
@@ -49,7 +47,7 @@ const About = () => {
   });
 
   return (
-    <div ref={aboutRef}>
+    <div id="about">
       <Welcome />
       <div className=" bg-lb2 py-[70px] dark:bg-db2 transition">
         <div className=" pl-7 md:pl-12 py-2 border-l-[12px] border-yellow-400">

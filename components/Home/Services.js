@@ -1,10 +1,7 @@
 import buildUrl from "cloudinary-build-url";
-import { useGlobalcontext } from "../context";
 import SingleService from "./SingleService";
 
 const Services = () => {
-  const { serviceRef } = useGlobalcontext();
-
   const myArray = [
     {
       url: "archi_cyyby3",
@@ -50,7 +47,7 @@ const Services = () => {
   return (
     <div
       className=" bg-lb1 dark:bg-db1 py-[70px] lgr:pt-24 transition"
-      ref={serviceRef}
+      id="services"
     >
       <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
         Services{" "}

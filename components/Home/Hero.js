@@ -5,8 +5,6 @@ import { useGlobalcontext } from "../context";
 import { useEffect } from "react/cjs/react.production.min";
 
 const Hero = () => {
-  const { heroRef } = useGlobalcontext();
-
   const src = buildUrl("hero-bg_swza65", {
     cloud: {
       cloudName: "ddwguc7vu",
@@ -16,7 +14,7 @@ const Hero = () => {
   return (
     <div
       className="w-full h-screen border-b-[24px] border-yellow-400 relative"
-      ref={heroRef}
+      id="hero"
     >
       <Image
         src={src}
