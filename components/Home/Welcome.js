@@ -1,10 +1,12 @@
 const Welcome = () => {
   return (
     <div
-      className="bg-lb1 dark:bg-db1 py-[70px] sm:pb-[144px] lg:pb-[70px] px-8 sm:px-10 transition"
+      className="bg-lb1 dark:bg-db1 py-[70px] sm:pb-[144px] lg:pb-[70px] px-8 sm:px-10 md:px-14 transition"
       id="welcome"
     >
-      <h3 className="font-medium text-2xl leading-[50px] text-text_wm dark:text-text_dm text-center tracking-wide sm:text-[1.75rem] lgr:text-[1.95rem] ">
+      <h3
+        className={`font-medium text-2xl leading-[50px] text-text_wm dark:text-text_dm text-center tracking-wide sm:text-[1.75rem] lgr:text-[1.95rem] transition-all duration-1000`}
+      >
         Welcome to
       </h3>
       <h1 className=" font-bold text-4xl sm:text-[2.5rem] lgr:text-5xl leading-[60px] text-text_wm dark:text-text_dm text-center xlr:text-[3.05rem] mt-4">

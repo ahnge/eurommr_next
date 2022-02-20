@@ -1,7 +1,10 @@
 import buildUrl from "cloudinary-build-url";
+import { useGlobalcontext } from "../context";
 import SingleService from "./SingleService";
 
 const Services = () => {
+  const { serviceRef } = useGlobalcontext();
+
   const myArray = [
     {
       url: "archi_cyyby3",
@@ -45,7 +48,10 @@ const Services = () => {
   });
 
   return (
-    <div className=" bg-lb1 dark:bg-db1 pt-14 pb-16 lgr:pt-24 transition">
+    <div
+      className=" bg-lb1 dark:bg-db1 py-[70px] lgr:pt-24 transition"
+      ref={serviceRef}
+    >
       <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
         Services{" "}
         <span className=" font-medium text-lg uppercase tracking-wider sm:text-[1.375rem] lgr:text-[1.95rem]">
@@ -53,7 +59,7 @@ const Services = () => {
         </span>
         <span className=" bg-yellow-600 dark:bg-yellow-400 rounded-full w-2 ml-1 h-2 inline-block"></span>
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 sm:gap-6 gap-4 mt-10 lgr:mt-16 px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[70px] px-8 sm:gap-10 sm:px-10 md:gap-14 md:px-14">
         {myUrls.map((ele, index) => {
           return (
             <SingleService

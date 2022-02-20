@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="font-mont" ref={parentTag}>
+    <div className="font-mont scroll-smooth" ref={parentTag}>
       {children}
       <Footer />
     </div>

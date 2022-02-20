@@ -1,6 +1,11 @@
 import { Location, Mail, User } from "../icons/icons";
+import { useState, useEffect } from "react";
+import { useGlobalcontext } from "../context";
 
 const Contact = () => {
+  const [emailHasSent, setEmailHasSent] = useState(false);
+  const { contactRef } = useGlobalcontext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {};
@@ -13,17 +18,22 @@ const Contact = () => {
     fetch("/api/mail", {
       method: "post",
       body: JSON.stringify(formData),
+    }).then(() => {
+      setEmailHasSent(true);
+      setTimeout(() => {
+        setEmailHasSent(false);
+      }, 3000);
     });
-    console.log(formData);
   };
+
   return (
-    <div className=" py-16 bg-lb1 dark:bg-db1 transition">
-      <div className=" pl-7 py-2 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400">
+    <div className=" py-[70px] bg-lb1 dark:bg-db1 transition" ref={contactRef}>
+      <div className=" pl-7 py-2 md:pl-12 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400">
         <h3 className=" font-semibold text-2xl sm:text-[1.75rem] lgr:text-[2.44rem] text-text_wm dark:text-text_dm">
           Contact US
         </h3>
       </div>
-      <div className="flex flex-col px-8 mt-8 xl:px-20 lgr:px-32 xlr:px-40 sm:flex-row items-center">
+      <div className="flex flex-col px-8 md:px-14 mt-[70px] xl:px-20 lgr:px-32 xlr:px-40 sm:flex-row items-center">
         <div className="flex-1 px-6 space-y-3 xlr:space-y-5">
           <div className="flex items-center justify-start space-x-6 text-text_wm dark:text-text_dm">
             <User />
@@ -45,7 +55,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex-1 mt-10">
-          <form className=" space-y-4" onSubmit={handleSubmit}>
+          <form className=" space-y-4 relative" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
@@ -76,6 +86,13 @@ const Contact = () => {
             >
               Submit
             </button>
+            <p
+              className={`text-sm text-text_wm dark:text-text_dm px-3 py-1 bg-green-300 rounded-md w-fit absolute bottom-2 right-0 dark:bg-green-500 ${
+                emailHasSent ? "block" : "hidden"
+              }`}
+            >
+              Success! We will reach you ASAP.
+            </p>
           </form>
         </div>
       </div>

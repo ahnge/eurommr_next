@@ -3,7 +3,7 @@ import Image from "next/image";
 const ProfileImg = ({ src, blurSrc, name, role }) => {
   return (
     <div className="rounded-lg bg-white dark:bg-black  overflow-hidden shadow-lg hover:scale-105 transition">
-      <div className="relative h-[200px] sm:h-[300px] md:h-[400px] ">
+      <div className="relative h-[150px] sm:h-[300px] ">
         <Image
           alt="profile pic"
           src={src}

@@ -1,5 +1,4 @@
 import Hero from "../components/Home/Hero";
-import Welcome from "../components/Home/Welcome";
 import Nav from "../components/Nav";
 import About from "../components/Home/About";
 import Services from "../components/Home/Services";
@@ -9,10 +8,9 @@ import Contact from "../components/Home/Contact";
 
 export default function Home({ data }) {
   return (
-    <div className=" bg-white dark:bg-black min-h-screen w-full lg:pl-64 xlr:pl-[400px]">
+    <div className=" bg-white dark:bg-black min-h-screen w-full lg:pl-64">
       <Nav />
       <Hero />
-      <Welcome />
       <About />
       <Services />
       <Projects data={data} />
