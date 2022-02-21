@@ -1,8 +1,11 @@
 import { Location, Mail, User } from "../icons/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useGlobalcontext } from "../context";
 
 const Contact = () => {
   const [emailHasSent, setEmailHasSent] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const { contactRef } = useGlobalcontext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,16 +19,28 @@ const Contact = () => {
     fetch("/api/mail", {
       method: "post",
       body: JSON.stringify(formData),
-    }).then(() => {
-      setEmailHasSent(true);
-      setTimeout(() => {
-        setEmailHasSent(false);
-      }, 3000);
-    });
+    })
+      .then(() => {
+        setEmailHasSent(true);
+        setTimeout(() => {
+          setEmailHasSent(false);
+        }, 3000);
+      })
+      .catch((err) => {
+        console.log(err);
+        setEmailError(true);
+        setTimeout(() => {
+          setEmailError(false);
+        }, 3000);
+      });
   };
 
   return (
-    <div className=" py-[70px] bg-lb1 dark:bg-db1 transition" id="contact">
+    <div
+      className=" py-[70px] bg-lb1 dark:bg-db1 transition"
+      ref={contactRef}
+      id="contact"
+    >
       <div className=" pl-7 py-2 md:pl-12 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400">
         <h3 className=" font-semibold text-2xl sm:text-[1.75rem] lgr:text-[2.44rem] text-text_wm dark:text-text_dm">
           Contact US
@@ -85,7 +100,7 @@ const Contact = () => {
               Submit
             </button>
             <p
-              className={`text-sm text-text_wm dark:text-text_dm px-3 py-1 bg-green-300 rounded-md w-fit absolute bottom-2 right-0 dark:bg-green-500 ${
+              className={`text-sm text-white dark:bg-white dark:text-black px-3 py-1 bg-black rounded-md w-fit ${
                 emailHasSent ? "block" : "hidden"
               }`}
             >

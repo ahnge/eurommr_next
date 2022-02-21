@@ -13,7 +13,7 @@ module.exports = {
         text_wm: "#1B1E1F",
         text_dm: "#F3F3F3",
         lb1: "#FDFDFD",
-        lb2: "#F7F7F7",
+        lb2: "#DBDADA",
         db1: "#1C1C1C",
         db2: "#161616",
         hover: "#707172",

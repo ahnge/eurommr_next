@@ -13,7 +13,7 @@ const Welcome = () => {
         EUROMMR
         <span className=" bg-yellow-500 rounded-full w-2 ml-1 h-2 inline-block"></span>
       </h1>
-      <p className=" font-normal mt-9 lgr:mt-10 text-sm leading-6 text-left text-text_wm dark:text-text_dm tracking-wider sm:text-lg lg:text-center xlr:text-2xl">
+      <p className=" font-normal mt-9 lgr:mt-10 text-sm leading-6 text-left text-text_wm dark:text-text_dm tracking-wider sm:text-lg lg:text-center max-w-5xl mx-auto">
         Here at EUROMMR, We provides Architecture Design and Construction
         serveices mainly for residential market. We offer a wide range of expert
         home innovation and building services across{" "}

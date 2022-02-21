@@ -10,8 +10,8 @@ const SingleService = ({ num, title, body, url, blurUrl }) => {
       <p className="font-semibold text-5xl sm:text-[3.25rem] lgr:text-[3.81rem] text-yellow-400 mb-2 lg:mb-8">
         0{num + 1}
       </p>
-      <div className=" rounded-lg bg-white dark:bg-db2 shadow-lg overflow-hidden transition">
-        <div className="relative h-44 xl:h-56 xlr:h-80">
+      <div className=" rounded-lg bg-white dark:bg-black shadow-lg overflow-hidden transition">
+        <div className="relative h-44 xl:h-56 xlr:h-70">
           <Image
             alt={title}
             src={url}
@@ -32,7 +32,7 @@ const SingleService = ({ num, title, body, url, blurUrl }) => {
         </p>
 
         <div className="px-4 py-4 flex justify-between items-center">
-          <h3 className=" font-medium text-sm sm:text-base xlr:text-2xl text-text_wm dark:text-text_dm">
+          <h3 className=" font-medium text-sm sm:text-base xlr:text-xl text-text_wm dark:text-text_dm">
             {title}
           </h3>
           <div

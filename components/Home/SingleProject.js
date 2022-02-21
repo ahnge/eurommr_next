@@ -2,6 +2,7 @@ import Image from "next/image";
 import buildUrl from "cloudinary-build-url";
 import Link from "next/link";
 import { useState } from "react";
+import { DownArrow, rightArrow, RIghtDoubleArrow } from "../icons/icons";
 
 const SingleProject = ({ slogan, title, location, url, hash }) => {
   const [isHover, setIsHover] = useState(false);
@@ -18,7 +19,7 @@ const SingleProject = ({ slogan, title, location, url, hash }) => {
   return (
     <Link href={`/projects/${slogan}`} passHref>
       <div
-        className="mx-auto cursor-pointer"
+        className="mx-auto cursor-pointer relative"
         onMouseEnter={() => setIsHover((s) => !s)}
         onMouseLeave={() => setIsHover((s) => !s)}
       >
@@ -32,15 +33,20 @@ const SingleProject = ({ slogan, title, location, url, hash }) => {
         />
         <div
           className={`h-1 bg-yellow-400 mx-auto mt-2 rounded-lg transition-all ${
-            isHover ? "w-full" : "w-1/2"
+            isHover ? "w-full" : "w-1/4"
           }`}
         ></div>
-        <h2 className=" font-medium text-sm text-text_wm dark:text-text_dm text-center mt-2 sm:text-lg  xlr:text-3xl">
-          {title}
-        </h2>
-        <p className=" font-normal text-[0.8125rem] text-text_wm tracking-widest dark:text-text_dm text-center mt-1 sm:text-base xlr:text-xl">
-          {location}
-        </p>
+        <div className="flex justify-between items-center px-5 mt-2">
+          <div>
+            <h2 className=" font-semibold text-base text-text_wm dark:text-text_dm mt-2 sm:text-lg  xlr:text-xl">
+              {title}
+            </h2>
+            <p className=" font-normal text-xs text-text_wm tracking-widest dark:text-text_dm mt-1 sm:text-base">
+              {location}
+            </p>
+          </div>
+          <RIghtDoubleArrow />
+        </div>
       </div>
     </Link>
   );

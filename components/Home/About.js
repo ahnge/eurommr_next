@@ -4,6 +4,8 @@ import ProfileImg from "./ProfileImg";
 import Welcome from "./Welcome";
 
 const About = () => {
+  const { aboutRef } = useGlobalcontext();
+
   const myArray = [
     {
       url: "temp_propfile_swnwih",
@@ -47,7 +49,7 @@ const About = () => {
   });
 
   return (
-    <div id="about">
+    <div ref={aboutRef} id="about">
       <Welcome />
       <div className=" bg-lb2 py-[70px] dark:bg-db2 transition">
         <div className=" pl-7 md:pl-12 py-2 border-l-[12px] border-yellow-400">
@@ -59,7 +61,7 @@ const About = () => {
             who we are
           </h3>
         </div>
-        <div className="w-full grid grid-flow-row grid-cols-2 xl:grid-cols-4 mt-[70px] px-8 gap-5 sm:gap-10 sm:px-10 md:gap-14 md:px-14 xl:gap-5">
+        <div className="w-full grid grid-flow-row grid-cols-2 xl:grid-cols-4 mt-[70px] px-8 gap-5 sm:gap-10 sm:px-10 md:gap-14 md:px-14 xl:gap-5 xlr:gap-10 xlr:px-32">
           {myUrls.map((urlObj, index) => {
             return (
               <ProfileImg

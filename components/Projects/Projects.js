@@ -31,7 +31,7 @@ const Projects = ({ data }) => {
   return (
     <>
       <h2 className=" text-text_wm dark:text-text_dm text-lg px-10">{title}</h2>
-      <div className="grid grid-cols-1 px-6 mt-6 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 px-6 mt-6 gap-5 sm:grid-cols-2 sm:px-10 lgr:grid-cols-3 xlr:grid-cols-4">
         {myUrls.map((obj, index) => {
           const { src, blurSrc, width, height } = obj;
           return (

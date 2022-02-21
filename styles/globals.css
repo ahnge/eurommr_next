@@ -3,7 +3,3 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
-
-.active {
-  @apply border-yellow-400 bg-active text-white;
-}

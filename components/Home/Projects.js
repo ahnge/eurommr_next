@@ -1,9 +1,13 @@
+import { useGlobalcontext } from "../context";
 import SingleProject from "./SingleProject";
 
 const Projects = ({ data }) => {
+  const { projectRef } = useGlobalcontext();
+
   return (
     <div
       className=" bg-lb2 dark:bg-db2 py-[70px] lgr:pt-24 transition"
+      ref={projectRef}
       id="projects"
     >
       <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
@@ -13,7 +17,7 @@ const Projects = ({ data }) => {
         </span>
         <span className=" bg-yellow-600 dark:bg-yellow-400 rounded-full w-2 ml-1 h-2 inline-block"></span>
       </h2>
-      <div className="grid grid-cols-1 grid-flow-row px-8 gap-5 mt-[70px] xl:grid-cols-4 md:gap-14 md:px-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 grid-flow-row px-8 sm:px-10 gap-10 mt-[70px] md:gap-14 md:px-14 lgr:grid-cols-4 xlr:gap-10 xlr:px-32">
         {data.map((obj) => {
           const { id } = obj;
           const { title, location, slogan } = obj.attributes;
