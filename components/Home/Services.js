@@ -1,28 +1,29 @@
 import buildUrl from "cloudinary-build-url";
 import { useGlobalcontext } from "../context";
 import SingleService from "./SingleService";
+import { useInView } from "react-intersection-observer";
 
 const Services = () => {
   const { serviceRef } = useGlobalcontext();
 
   const myArray = [
     {
-      url: "archi_cyyby3",
+      url: "architecture_axilk6",
       title: "Architecture Design",
       body: "We offer planing modern exterior or interior designs for your future home with realistic rendering",
     },
     {
-      url: "construction_lvexfb",
+      url: "construction_v8i2ha",
       title: "Construction",
       body: "We offer planing modern exterior or interior designs for your future home with realistic rendering",
     },
     {
-      url: "renovation_qry2wk",
+      url: "renovation_qkuq6a",
       title: "Renovation",
       body: "We offer planing modern exterior or interior designs for your future home with realistic rendering",
     },
     {
-      url: "furniture_jwmldj",
+      url: "custom_furnicture_rx7bcm",
       title: "Custom Furnitures",
       body: "We offer planing modern exterior or interior designs for your future home with realistic rendering",
     },
@@ -47,13 +48,25 @@ const Services = () => {
     return { src, blurSrc, title: ele.title, body: ele.body };
   });
 
+  const { ref: serviceTitleRef, inView: serviceTitleInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
     <div
       className=" bg-lb1 dark:bg-db1 py-[70px] lgr:pt-24 transition"
       ref={serviceRef}
       id="services"
     >
-      <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
+      <h2
+        className={`font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem] transition-all duration-1000 ${
+          serviceTitleInView
+            ? " opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-3"
+        }`}
+        ref={serviceTitleRef}
+      >
         Services{" "}
         <span className=" font-medium text-lg uppercase tracking-wider sm:text-[1.375rem] lgr:text-[1.95rem]">
           we offer

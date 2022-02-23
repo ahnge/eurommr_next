@@ -25,10 +25,11 @@ export default function Home({ data }) {
         />
         <meta
           name="keywords"
-          content="Eurommr, Construction, Architecture Firm "
+          content="Eurommr, Construction, Architecture Firm Myanmar, Architecture, Construction Myanmar"
         />
         <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
       </Head>
+
       <div
         className=" bg-white dark:bg-black min-h-screen w-full lg:pl-64"
         onClick={handleClick}

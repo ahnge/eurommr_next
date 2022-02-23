@@ -47,14 +47,13 @@ const NavForHomePage = () => {
 
   return (
     <nav className="w-full">
-      <div className=" w-1/4 h-[2px] bg-yellow-400 mx-auto rounded-sm mb-10"></div>
       <ul className=" w-full">
         <li className=" w-full">
           <Link
             to="hero"
             smooth={true}
             duration={500}
-            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white hover:dark:text-yellow-400 cursor-pointer ${
+            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white cursor-pointer ${
               heroActive
                 ? " bg-active border-yellow-400 text-text_dm"
                 : "bg-transparent border-transparent text-text_wm dark:text-text_dm"
@@ -70,7 +69,7 @@ const NavForHomePage = () => {
             smooth={true}
             duration={500}
             offset={200}
-            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white hover:dark:text-yellow-400 cursor-pointer ${
+            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white cursor-pointer ${
               aboutActive
                 ? " bg-active border-yellow-400 text-text_dm"
                 : "bg-transparent border-transparent text-text_wm dark:text-text_dm"
@@ -85,7 +84,7 @@ const NavForHomePage = () => {
             to="services"
             smooth={true}
             duration={500}
-            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white hover:dark:text-yellow-400 cursor-pointer ${
+            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white cursor-pointer ${
               serviceActive
                 ? " bg-active border-yellow-400 text-text_dm"
                 : "bg-transparent border-transparent text-text_wm dark:text-text_dm"
@@ -100,7 +99,7 @@ const NavForHomePage = () => {
             to="projects"
             smooth={true}
             duration={500}
-            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white hover:dark:text-yellow-400 cursor-pointer ${
+            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white cursor-pointer ${
               projectsActive
                 ? " bg-active border-yellow-400 text-text_dm"
                 : "bg-transparent border-transparent text-text_wm dark:text-text_dm"
@@ -115,7 +114,7 @@ const NavForHomePage = () => {
             to="contact"
             smooth={true}
             duration={500}
-            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white hover:dark:text-yellow-400 cursor-pointer ${
+            className={`font-light text-base leading-[26px] py-3 block w-full border-l-8  transition-all pl-14 xlr:py-5 xlr:tracking-wide  hover:bg-hover hover:border-yellow-400 hover:text-white cursor-pointer ${
               contactActive
                 ? " bg-active border-yellow-400 text-text_dm"
                 : "bg-transparent border-transparent text-text_wm dark:text-text_dm"
@@ -126,7 +125,6 @@ const NavForHomePage = () => {
           </Link>
         </li>
       </ul>
-      <div className=" w-1/4 h-[2px] bg-yellow-400 mx-auto rounded-sm mt-16"></div>
     </nav>
   );
 };

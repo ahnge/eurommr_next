@@ -52,7 +52,7 @@ const ProjectPage = ({ data }) => {
         />
         <meta
           name="keywords"
-          content="Eurommr, Construction, Architecture Firm "
+          content="Eurommr, Construction, Architecture Firm Myanmar, Architecture, Construction Myanmar "
         />
         <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
       </Head>

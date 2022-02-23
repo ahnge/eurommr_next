@@ -1,8 +1,14 @@
 import { useGlobalcontext } from "../context";
 import SingleProject from "./SingleProject";
+import { useInView } from "react-intersection-observer";
 
 const Projects = ({ data }) => {
   const { projectRef } = useGlobalcontext();
+
+  const { ref: projectTitleRef, inView: projectTitleInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
 
   return (
     <div
@@ -10,7 +16,14 @@ const Projects = ({ data }) => {
       ref={projectRef}
       id="projects"
     >
-      <h2 className=" font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem]">
+      <h2
+        className={`font-semibold text-2xl tracking-tight text-text_wm dark:text-text_dm text-center sm:text-[1.75rem] lgr:text-[2.44rem] transition-all duration-1000 ${
+          projectTitleInView
+            ? " opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-3"
+        }`}
+        ref={projectTitleRef}
+      >
         Our{" "}
         <span className=" font-medium text-lg uppercase tracking-wider sm:text-[1.375rem] lgr:text-[1.95rem]">
           Projects

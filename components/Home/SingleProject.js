@@ -33,7 +33,7 @@ const SingleProject = ({ slogan, title, location, url, hash }) => {
         />
         <div
           className={`h-1 bg-yellow-400 mx-auto mt-2 rounded-lg transition-all ${
-            isHover ? "w-full" : "w-1/4"
+            isHover ? "w-full" : "w-2/4"
           }`}
         ></div>
         <div className="flex justify-between items-center px-5 mt-2">

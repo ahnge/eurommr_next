@@ -21,9 +21,9 @@ const Footer = () => {
         routeIsHome ? "bg-lb2 dark:bg-db2" : "bg-lb-1 dark:bg-db1"
       }`}
     >
-      <div className="py-8 flex flex-col space-y-6 justify-between items-center border-b-[24px] border-b-yellow-400 md:flex-row md:px-14">
+      <div className="py-8 flex flex-col space-y-6 justify-between items-center border-b-[24px] border-b-yellow-400 md:flex-row-reverse md:px-14 md:space-y-0">
         <FooterLogo />
-        <p className=" text-text_wm font-light text-sm dark:text-text_dm">
+        <p className=" text-text_wm font-light text-xs dark:text-text_dm">
           2022&copy; All Rights Reserved.
         </p>
       </div>

@@ -1,11 +1,21 @@
 import { Location, Mail, User } from "../icons/icons";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useGlobalcontext } from "../context";
+import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
   const [emailHasSent, setEmailHasSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const { contactRef } = useGlobalcontext();
+
+  let options = {
+    threshold: 1,
+    triggerOnce: true,
+  };
+
+  const { ref: contactTitleRef, inView: contactTitleInView } =
+    useInView(options);
+  const { ref: contactBoxRef, inView: contactBoxInView } = useInView(options);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +26,7 @@ const Contact = () => {
       field.value = "";
     });
 
-    fetch("/api/mail", {
+    fetch("www.eurommr.com/api/mail", {
       method: "post",
       body: JSON.stringify(formData),
     })
@@ -41,8 +51,22 @@ const Contact = () => {
       ref={contactRef}
       id="contact"
     >
-      <div className=" pl-7 py-2 md:pl-12 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400">
-        <h3 className=" font-semibold text-2xl sm:text-[1.75rem] lgr:text-[2.44rem] text-text_wm dark:text-text_dm">
+      <div
+        className={`pl-7 py-2 md:pl-12 lg:py-4 lgr:py-6 border-l-[12px] border-yellow-400 transition-all duration-1000 ${
+          contactBoxInView
+            ? " opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-3"
+        }`}
+        ref={contactBoxRef}
+      >
+        <h3
+          ref={contactTitleRef}
+          className={`font-semibold text-2xl sm:text-[1.75rem] lgr:text-[2.44rem] text-text_wm dark:text-text_dm transition-all duration-1000 delay-300 ${
+            contactTitleInView
+              ? " opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-3"
+          }`}
+        >
           Contact US
         </h3>
       </div>
@@ -106,11 +130,17 @@ const Contact = () => {
             >
               Success! We will reach you ASAP.
             </p>
+            <p
+              className={`text-sm text-white dark:bg-white dark:text-black px-3 py-1 bg-black rounded-md w-fit ${
+                emailError ? "block" : "hidden"
+              }`}
+            >
+              Sorry. Can't use the email service now. Reach us via phone.
+            </p>
           </form>
         </div>
       </div>
     </div>
   );
 };
-
 export default Contact;
