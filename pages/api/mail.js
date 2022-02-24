@@ -7,12 +7,12 @@ const mail = require("@sendgrid/mail");
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default function handler(req, res) {
-  const body = JSON.parse(req.body);
+  console.log(req.body);
 
   const message = `
-    Name: ${body.name}\r\n
-    Phone number: ${body.phone_number}\r\n
-    Message: ${body.message}
+    Name: ${req.body.name}\r\n
+    Phone number: ${req.body.phoneNumber}\r\n
+    Message: ${req.body.message}
   `;
 
   const data = {
@@ -31,5 +31,5 @@ export default function handler(req, res) {
     })
     .catch((err) => console.log(err));
 
-  res.status(200).json({ status: "OK" });
+  res.status(200).json({ status: "It is Ok" });
 }

@@ -4,6 +4,10 @@ import { useGlobalcontext } from "../context";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+
   const [emailHasSent, setEmailHasSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const { contactRef } = useGlobalcontext();
@@ -19,19 +23,29 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = {};
-    Array.from(e.currentTarget.elements).forEach((field) => {
-      if (!field.name) return;
-      formData[field.name] = field.value;
-      field.value = "";
-    });
+
+    const reset = () => {
+      setName("");
+      setPhoneNumber("");
+      setMessage("");
+    };
+
+    const formData = {
+      name,
+      phoneNumber,
+      message,
+    };
 
     fetch("/api/mail", {
-      method: "post",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     })
       .then(() => {
         setEmailHasSent(true);
+        reset();
         setTimeout(() => {
           setEmailHasSent(false);
         }, 3000);
@@ -39,6 +53,7 @@ const Contact = () => {
       .catch((err) => {
         console.log(err);
         setEmailError(true);
+        reset();
         setTimeout(() => {
           setEmailError(false);
         }, 3000);
@@ -94,6 +109,8 @@ const Contact = () => {
         <div className="flex-1 mt-10">
           <form className=" space-y-4 relative" onSubmit={handleSubmit}>
             <input
+              onChange={(e) => setName(e.target.value)}
+              value={name}
               type="text"
               name="name"
               id="name"
@@ -102,6 +119,8 @@ const Contact = () => {
               required
             />
             <input
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={phoneNumber}
               type="tel"
               name="phone_number"
               id="phone_number"
@@ -110,6 +129,8 @@ const Contact = () => {
               required
             />
             <textarea
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
               name="message"
               id="message"
               className=" bg-lb2 text-text_wm dark:text-text_dm text-sm sm:text-base xlr:text-lg font-light shadow-inner dark:bg-db2 focus:outline outline-2 outline-yellow-400 w-full rounded-lg px-4 py-2"
