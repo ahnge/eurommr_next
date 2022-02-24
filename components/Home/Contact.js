@@ -26,7 +26,7 @@ const Contact = () => {
       field.value = "";
     });
 
-    fetch("www.eurommr.com/api/mail", {
+    fetch("/api/mail", {
       method: "post",
       body: JSON.stringify(formData),
     })
