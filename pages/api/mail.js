@@ -2,11 +2,11 @@
 
 // domain.com/api/mail
 
-const mail = require("@sendgrid/mail");
-
-mail.setApiKey(process.env.SENDGRID_API_KEY);
-
 export default function handler(req, res) {
+  const mail = require("@sendgrid/mail");
+
+  mail.setApiKey(process.env.SENDGRID_API_KEY);
+
   console.log(req.body);
 
   const message = `
