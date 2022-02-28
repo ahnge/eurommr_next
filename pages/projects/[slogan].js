@@ -6,7 +6,7 @@ import { useGlobalcontext } from "../../components/context";
 import Head from "next/head";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://strapi-eurommr.herokuapp.com/api/services");
+  const res = await fetch("https://strapi-eurommr.herokuapp.com/api/projects");
   const resObj = await res.json();
 
   const slogans = resObj.data.map((bg) => {
@@ -25,23 +25,30 @@ export const getStaticProps = async (context) => {
   const slo = context.params.slogan;
 
   const res = await fetch(
-    `https://strapi-eurommr.herokuapp.com/api/services?filters[slogan][$eq]=${slo}&fields=title,slogan&populate=project_photos`
+    `https://strapi-eurommr.herokuapp.com/api/projects?filters[slogan][$eq]=${slo}&populate=multiMedia,video`
   );
   const resObj = await res.json();
+
+  const secondRes = await fetch(
+    "https://strapi-eurommr.herokuapp.com/api/projects"
+  );
+  const secondResObj = await secondRes.json();
 
   return {
     props: {
       data: resObj,
+      secondData: secondResObj.data,
     },
   };
 };
 
-const ProjectPage = ({ data }) => {
+const ProjectPage = ({ data, secondData }) => {
   const { setIsOpen } = useGlobalcontext();
 
   const handleClick = () => {
     setIsOpen(false);
   };
+
   return (
     <>
       <Head>
@@ -57,10 +64,9 @@ const ProjectPage = ({ data }) => {
         <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
       </Head>
       <div
-        className=" bg-lb2 dark:bg-db2 min-h-screen w-full lg:pl-64 py-10 transition"
+        className=" backdrop-blur-xl min-h-screen w-full lg:pl-64 py-10 transition bg-lb1 dark:bg-db2"
         onClick={handleClick}
       >
-        <DL />
         <Projects data={data} />
         <div className="px-10 flex justify-end mt-10">
           <Link href={"/"}>
@@ -70,7 +76,8 @@ const ProjectPage = ({ data }) => {
           </Link>
         </div>
       </div>
-      <Nav />
+      <DL />
+      <Nav data={secondData} />
     </>
   );
 };

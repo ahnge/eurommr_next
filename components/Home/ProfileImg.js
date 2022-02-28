@@ -21,7 +21,7 @@ const ProfileImg = ({ src, blurSrc, name, role }) => {
         <h5 className=" font-semibold capitalize tracking-normal text-sm sm:text-lg lgr:text-xl xlr:text-xl mb-2 text-left text-text_wm dark:text-text_dm">
           {name}
         </h5>
-        <p className=" capitalize text-xs sm:text-sm xlr:text-base text-left text-eu_yel dark:text-eu_yel font-normal tracking-wider">
+        <p className=" capitalize text-xs sm:text-sm xlr:text-base text-left text-yellow-600 dark:text-eu_yel font-normal tracking-wider">
           {role}
         </p>
       </div>

@@ -34,7 +34,8 @@ const Projects = ({ data }) => {
         {data.map((obj) => {
           const { id } = obj;
           const { title, location, slogan } = obj.attributes;
-          const { url, hash } = obj.attributes.service_media.data.attributes;
+          const { url, hash, width, height } =
+            obj.attributes.mainMedia.data.attributes;
           return (
             <SingleProject
               key={id}
@@ -43,6 +44,8 @@ const Projects = ({ data }) => {
               location={location}
               url={url}
               hash={hash}
+              width={width}
+              height={height}
             />
           );
         })}

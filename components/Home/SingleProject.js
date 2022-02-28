@@ -2,9 +2,17 @@ import Image from "next/image";
 import buildUrl from "cloudinary-build-url";
 import Link from "next/link";
 import { useState } from "react";
-import { DownArrow, rightArrow, RIghtDoubleArrow } from "../icons/icons";
+import { RIghtDoubleArrow } from "../icons/icons";
 
-const SingleProject = ({ slogan, title, location, url, hash }) => {
+const SingleProject = ({
+  slogan,
+  title,
+  location,
+  url,
+  hash,
+  width,
+  height,
+}) => {
   const [isHover, setIsHover] = useState(false);
 
   const blurUrl = buildUrl(hash, {
@@ -25,8 +33,8 @@ const SingleProject = ({ slogan, title, location, url, hash }) => {
       >
         <Image
           alt="project img"
-          width={346}
-          height={288}
+          width={width}
+          height={height}
           src={url}
           placeholder="blur"
           blurDataURL={blurUrl}

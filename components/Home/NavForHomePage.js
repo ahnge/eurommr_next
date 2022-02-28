@@ -1,6 +1,6 @@
 import Link from "react-scroll/modules/components/Link";
 import { useGlobalcontext } from "../context";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const NavForHomePage = () => {
   const { setIsOpen, mySetStates, myInViews, myStates } = useGlobalcontext();
@@ -121,7 +121,7 @@ const NavForHomePage = () => {
             }`}
             onClick={() => setIsOpen(false)}
           >
-            Contact
+            Contact us
           </Link>
         </li>
       </ul>

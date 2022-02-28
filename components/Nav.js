@@ -1,18 +1,13 @@
-import { Facebook, LeftArrow, Logo, LogoDark, RightArrow } from "./icons/icons";
+import { Facebook, LeftArrow, Logo, RightArrow } from "./icons/icons";
 import { useGlobalcontext } from "./context";
 import Link from "react-scroll/modules/components/Link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import NavForHomePage from "./Home/NavForHomePage";
-import NavForProjectsPage from "./Home/NavForProjectsPage";
+import NavForProjectsPage from "./Projects/NavForProjectsPage";
 
-const Nav = () => {
+const Nav = ({ data }) => {
   const { isOpen, setIsOpen } = useGlobalcontext();
   const router = useRouter();
-
-  useEffect(() => {
-    console.log(router);
-  }, []);
 
   return (
     <div
@@ -27,7 +22,11 @@ const Nav = () => {
 
         <div className=" w-1/2 h-[2px] bg-eu_yel mx-auto rounded-sm"></div>
 
-        {router.route === "/" ? <NavForHomePage /> : <NavForProjectsPage />}
+        {router.route === "/" ? (
+          <NavForHomePage />
+        ) : (
+          <NavForProjectsPage data={data} />
+        )}
 
         <div className=" w-1/2 h-[2px] bg-eu_yel mx-auto rounded-sm"></div>
 

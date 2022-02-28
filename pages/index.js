@@ -8,6 +8,19 @@ import Contact from "../components/Home/Contact";
 import { useGlobalcontext } from "../components/context";
 import Head from "next/head";
 
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "https://strapi-eurommr.herokuapp.com/api/projects?sort=publishedAt:desc&populate=mainMedia"
+  );
+  const resObj = await res.json();
+
+  return {
+    props: {
+      data: resObj.data,
+    },
+  };
+};
+
 export default function Home({ data }) {
   const { setIsOpen } = useGlobalcontext();
 
@@ -45,16 +58,3 @@ export default function Home({ data }) {
     </>
   );
 }
-
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://strapi-eurommr.herokuapp.com/api/services?populate=service_media&sort=publishedAt:desc"
-  );
-  const resObj = await res.json();
-
-  return {
-    props: {
-      data: resObj.data,
-    },
-  };
-};

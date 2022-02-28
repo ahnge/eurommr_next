@@ -79,7 +79,7 @@ const About = () => {
             ref={aboutTitleRef}
           >
             About Us
-            <span className=" bg-eu_yel rounded-full w-2 ml-1 h-2 inline-block"></span>
+            <span className=" bg-yellow-600 dark:bg-eu_yel rounded-full w-2 ml-1 h-2 inline-block"></span>
           </h3>
           <h3
             className={` uppercase font-medium text-lg sm:text-[1.375rem] lgr:[1.94rem] leading-10 text-text_wm dark:text-text_dm tracking-tight transition-all duration-[1000ms] delay-500 ${
