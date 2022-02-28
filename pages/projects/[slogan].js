@@ -69,7 +69,7 @@ const ProjectPage = ({ data, secondData }) => {
       >
         <Projects data={data} />
         <div className="px-10 flex justify-end mt-10">
-          <Link href={"/"}>
+          <Link href={"/#projects"}>
             <a className="px-6 py-2 bg-yellow-400 rounded-md capitalize shadow-md text-black border-2 border-yellow-400 hover:border-black dark:border-yellow-400 hover:bg-db1 hover:text-white transition">
               Back
             </a>
