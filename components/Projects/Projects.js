@@ -36,7 +36,7 @@ const Projects = ({ data }) => {
               <video
                 src={video.data.attributes.url}
                 controls
-                className=" rounded-md mx-auto max-w-sm"
+                className=" rounded-md mx-auto max-w-sm w-full"
               ></video>
             )}
           </div>
