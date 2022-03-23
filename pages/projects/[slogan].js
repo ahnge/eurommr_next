@@ -25,7 +25,7 @@ export const getStaticProps = async (context) => {
   const slo = context.params.slogan;
 
   const res = await fetch(
-    `https://strapi-eurommr.herokuapp.com/api/projects?filters[slogan][$eq]=${slo}&populate=multiMedia,video`
+    `https://strapi-eurommr.herokuapp.com/api/projects?filters[slogan][$eq]=${slo}&populate=multiMedia,video,photograph`
   );
   const resObj = await res.json();
 
